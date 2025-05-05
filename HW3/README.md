@@ -50,6 +50,7 @@ conda install pytorch==2.5.1+cu124 torchvision==0.15.2+cu124 numpy==1.26.4 \
               pycocotools==2.0.8 scikit-image==0.24.0 opencv-python==4.11.0.86
 # Need to install Detectron2...
 
+# For training
 python train.py \
   --model mask_rcnn_R_50_DC5_3x \
   --epochs 225 \
@@ -57,6 +58,12 @@ python train.py \
   --lr 0.001 \
   --optimizer Adagrad \
   --scheduler WarmupCosineLR
+
+# For inference
+python inference.py \
+  --checkpoint tensorboard/mask_rcnn_R_50_DC5_3x/5class--Adagrad_epoch225_bs14_lr0.001_WarmupCosineLR_df0.1__cuda1 \
+  --weight_name model_final.pth \
+  --dataset nycu-hw3-data/test_image_name_to_ids.json
 ```
 ## Performance snapshot
 ![leaderboard](leaderboard.png)
