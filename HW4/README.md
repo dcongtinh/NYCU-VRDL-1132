@@ -14,6 +14,7 @@ In this homework, we address the task of **image restoration** using a **prompt-
 ---
 
 ## Repository structure
+```
   .
   ├── data_split/                   # Training and validation data
   │   ├── Test/
@@ -48,7 +49,7 @@ In this homework, we address the task of **image restoration** using a **prompt-
   ├── inference.py                 # Inference and test output
   ├── options.py                   # Configs and hyperparameters
   └── README.md
-
+```
 ## How to Install
 
 The environment was managed using Conda 4.14.0, with the following main dependencies:
